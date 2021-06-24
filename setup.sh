@@ -1,16 +1,23 @@
 set -e
 
+# Gnome GUI Environ.
+dnf groupinstall -y workstation
+systemctl set-default graphical.target
+systemctl isolate graphical
+
 # Graphic Driver
-wget https://us.download.nvidia.com/XFree86/Linux-x86_64/460.84/NVIDIA-Linux-x86_64-460.84.run
-dnf groupinstall "Development Tools"
-dnf install libglvnd-devel elfutils-libelf-devel
-grub2-editenv -set "$(grub2-editenv - list | grep kernelopts) nouveau.modeset=0"
+wget -N https://us.download.nvidia.com/XFree86/Linux-x86_64/460.84/NVIDIA-Linux-x86_64-460.84.run
+dnf groupinstall -y "Development Tools"
+dnf install -y libglvnd-devel elfutils-libelf-devel
+grub2-editenv - set "$(grub2-editenv - list | grep kernelopts) nouveau.modeset=0"
+# NOTE: reboot
+sh NVIDIA-Linux-x86_64-460.84.run
 
 # NAS
 mkdir /mnt/drnss
 echo "username=" >> /etc/.drnss_credentials
 echo "password=" >> /etc/.drnss_credentials
-echo "//nas.kzmdstu.com/drnss /mnt/drnss cifs defaults,uid=1000,gid=1000,credentials=/etc/.drnss_credential"
+echo "//nas.kzmdstu.com/drnss /mnt/drnss cifs defaults,uid=1000,gid=1000,credentials=/etc/.drnss_credentials" >> /etc/fstab
 
 # Flathub for following Apps
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -24,9 +31,3 @@ flatpak install --noninteractive flathub org.blender.Blender
 
 # Gimp
 flatpak install --noninteractive flathub org.gimp.GIMP
-
-# Finally, install Gnome GUI Environ.
-dnf groupinstall workstation
-systemctl set-default graphical.target
-systemctl isolate graphical
-
