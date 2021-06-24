@@ -5,4 +5,4 @@ dnf groupinstall -y "Development Tools"
 dnf install -y libglvnd-devel elfutils-libelf-devel
 grub2-editenv - set "$(grub2-editenv - list | grep kernelopts) nouveau.modeset=0"
 reboot
-sh NVIDIA-Linux-x86_64-460.84.run
+/mnt/drnss/library/driver/nvidia/NVIDIA-Linux-x86_64-460.84.run
