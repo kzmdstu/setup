@@ -12,3 +12,5 @@ flatpak install --noninteractive flathub org.blender.Blender
 # Gimp
 flatpak install --noninteractive flathub org.gimp.GIMP
 
+# Mpv
+flatpak install --noninteractive flathub io.mpv.Mpv
