@@ -1,3 +1,4 @@
+#!/bin/bash
 set -e
 
 dnf groupinstall -y workstation
