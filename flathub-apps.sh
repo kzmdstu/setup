@@ -5,7 +5,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 # Firefox
 flatpak install --noninteractive flathub org.mozilla.firefox
-rm /usr/share/applications/firefox.desktop
+rm /usr/share/applications/firefox.desktop # avoid having two firefox apps in desktop
 
 # Blender
 flatpak install --noninteractive flathub org.blender.Blender
