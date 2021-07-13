@@ -1,6 +1,6 @@
 # setup
 
-Note that these scripts are tested only in Rocky Linux.
+Note that these scripts are tested only in [Rocky Linux](https://rockylinux.org).
 
 We recommend you install with following order.
 
