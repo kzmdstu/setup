@@ -1,3 +1,5 @@
+# DEPRECATED: use ipa-client-automount
+
 #!/bin/bash
 set -e
 
