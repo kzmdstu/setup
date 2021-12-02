@@ -5,18 +5,19 @@ set -e
 
 # Please do update the distro, then reboot first.
 # It would not work properly otherwise.
+UNAME=$(uname -r)
 # dnf -y update
 
 HERE=$(dirname $BASH_SOURCE)
 
 echo "Installing Nvidia Driver"
-dnf install epel-release
+dnf -y install epel-release
 dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
 # $(uname -r) trick will not work if `dnf update` has made jump on the latest kernel, but you are still using an old one.
 # Please reboot, then.
-dnf install kernel-devel-$(uname -r) kernel-headers-$(uname -r)
-dnf install nvidia-driver nvidia-settings
-dnf install cuda-driver
+dnf -y install kernel-devel-$(uname -r) kernel-headers-$(uname -r)
+dnf -y install nvidia-driver nvidia-settings
+dnf -y install cuda-driver
 
 echo "Installing Blender"
 if [[ ! -f "$HERE/blender.tar.xz" ]]; then
@@ -26,8 +27,8 @@ mkdir -p /opt/blender
 tar -C /opt/blender -xf "$HERE/blender.tar.xz"
 
 echo "Installing Firefox Video Codecs"
-dnf install rpmfusion-free-release
-dnf install gstreamer1-libav
+dnf -y install rpmfusion-free-release
+dnf -y install gstreamer1-libav
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 echo "Installing GIMP"
