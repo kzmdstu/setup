@@ -35,4 +35,9 @@ flatpak install --noninteractive flathub org.gimp.GIMP
 echo "Installing Mpv"
 flatpak install --noninteractive flathub io.mpv.Mpv
 
+echo "Setting up IPA Client"
+dnf -y install freeipa-client
+ipa-client-install --enable-dns-update --mkhomedir
+ipa-client-automount
+
 echo "Done. Please reboot to take effect."
