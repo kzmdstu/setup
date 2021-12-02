@@ -18,13 +18,6 @@ dnf -y install kernel-devel-$(uname -r) kernel-headers-$(uname -r)
 dnf -y install nvidia-driver nvidia-settings
 dnf -y install cuda-driver
 
-echo "Installing Blender"
-if [[ ! -f "$HERE/blender.tar.xz" ]]; then
-	wget -O "$HERE/blender.tar.xz" -nc https://download.blender.org/release/Blender2.93/blender-2.93.1-linux-x64.tar.xz
-fi
-mkdir -p /opt/blender
-tar -C /opt/blender -xf "$HERE/blender.tar.xz"
-
 echo "Installing Firefox Video Codecs"
 dnf -y install rpmfusion-free-release
 dnf -y install gstreamer1-libav
