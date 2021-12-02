@@ -32,6 +32,6 @@ echo "Setting up IPA Client"
 # TODO: find non-interactive way to install; maybe using --random password generated
 dnf -y install freeipa-client
 ipa-client-install --enable-dns-update --mkhomedir
-ipa-client-automount
+ipa-client-automount --unattended
 
 echo "Done. Please reboot to take effect."
