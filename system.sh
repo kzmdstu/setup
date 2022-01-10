@@ -22,11 +22,13 @@ echo "Installing Firefox Video Codecs"
 dnf -y install rpmfusion-free-release
 dnf -y install gstreamer1-libav
 
+echo "Installing Mpv"
+dnf config-manager --set-enabled powertools
+dnf -y install mpv
+
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 echo "Installing GIMP"
 flatpak install --noninteractive flathub org.gimp.GIMP
-echo "Installing Mpv"
-flatpak install --noninteractive flathub io.mpv.Mpv
 
 echo "Setting up IPA Client"
 # TODO: find non-interactive way to install; maybe using --random password generated
