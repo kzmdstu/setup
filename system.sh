@@ -7,9 +7,11 @@ HERE=$(dirname $BASH_SOURCE)
 
 echo "Updating The Distro"
 dnf -y update
+dnf -y install epel-release
+dnf config-manager --set-enabled powertools
+dnf -y install rpmfusion-free-release
 
 echo "Installing Nvidia Driver"
-dnf -y install epel-release
 dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
 # The $(uname -r) trick might not work if `dnf update` has made jump on the latest kernel,
 # but you are still using an old one.
@@ -19,11 +21,9 @@ dnf -y install nvidia-driver nvidia-settings
 dnf -y install cuda-driver
 
 echo "Installing FFmpeg"
-dnf -y install rpmfusion-free-release
 dnf -y install ffmpeg
 
 echo "Installing Mpv"
-dnf config-manager --set-enabled powertools
 dnf -y install mpv
 printf "keep-open\nloop-playlist=inf" > /etc/mpv/mpv.conf
 
