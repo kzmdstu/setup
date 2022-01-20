@@ -18,9 +18,9 @@ dnf -y install kernel-devel-$(uname -r) kernel-headers-$(uname -r)
 dnf -y install nvidia-driver nvidia-settings
 dnf -y install cuda-driver
 
-echo "Installing Firefox Video Codecs"
+echo "Installing FFmpeg"
 dnf -y install rpmfusion-free-release
-dnf -y install gstreamer1-libav
+dnf -y install ffmpeg
 
 echo "Installing Mpv"
 dnf config-manager --set-enabled powertools
