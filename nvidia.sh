@@ -2,7 +2,7 @@
 set -e
 
 echo "Updating The Distro"
-dnf -y install
+dnf -y update
 
 echo "Installing Nvidia Driver"
 dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
