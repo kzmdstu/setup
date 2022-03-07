@@ -28,6 +28,4 @@ dnf -y install freeipa-client
 ipa-client-install --enable-dns-update --mkhomedir
 ipa-client-automount --unattended
 
-dnf -y update
-
 echo "Done. Please reboot and install Nvidia driver"

@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+echo "Updating The Distro"
+dnf -y install
+
 echo "Installing Nvidia Driver"
 dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
 # The $(uname -r) trick might not work if `dnf update` has made jump on the latest kernel,
