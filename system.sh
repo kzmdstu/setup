@@ -28,4 +28,7 @@ dnf -y install freeipa-client
 ipa-client-install --enable-dns-update --mkhomedir
 ipa-client-automount --unattended
 
+echo "Etc..."
+echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-initial-setup-first-login.desktop
+
 echo "Done. Please reboot and install Nvidia driver"
