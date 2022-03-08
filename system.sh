@@ -27,6 +27,9 @@ echo "Setting up IPA Client"
 dnf -y install freeipa-client
 ipa-client-install --enable-dns-update --mkhomedir
 ipa-client-automount --unattended
+# override kerberos renew setting
+cp $HERE/data/krb5.conf /etc/krb5.conf
+echo "  $(hostname) = IN.KZMDSTU.COM" >> /etc/krb5.conf
 
 echo "Etc..."
 echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-initial-setup-first-login.desktop
