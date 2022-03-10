@@ -33,5 +33,6 @@ echo "  $(hostname) = IN.KZMDSTU.COM" >> /etc/krb5.conf
 
 echo "Etc..."
 echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-initial-setup-first-login.desktop
+dnf -y install ntfs-3g
 
 echo "Done. Please reboot and install Nvidia driver"
