@@ -35,5 +35,6 @@ echo "Etc..."
 echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-initial-setup-first-login.desktop
 dnf -y install ntfs-3g
 dnf -y install libreoffice-writer libreoffice-calc libreoffice-impress
+echo "y" | cp $HERE/data/mimeapps.list /etc/xdg/mimeapps.list
 
 echo "Done. Please reboot and install Nvidia driver"
