@@ -22,6 +22,14 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 echo "Installing GIMP"
 flatpak install --noninteractive flathub org.gimp.GIMP
 
+echo "Installing Useful Drivers/Programs"
+dnf -y install ntfs-3g
+dnf -y install libreoffice-writer libreoffice-calc libreoffice-impress
+
+echo "System Configuration"
+echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-initial-setup-first-login.desktop
+echo "y" | cp $HERE/data/mimeapps.list /etc/xdg/mimeapps.list
+
 echo "Setting up IPA Client"
 # TODO: find non-interactive way to install; maybe using --random password generated
 dnf -y install freeipa-client
@@ -30,11 +38,5 @@ ipa-client-automount --unattended
 # override kerberos renew setting
 echo "y" | cp $HERE/data/krb5.conf /etc/krb5.conf
 echo "  $(hostname) = IN.KZMDSTU.COM" >> /etc/krb5.conf
-
-echo "Etc..."
-echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-initial-setup-first-login.desktop
-dnf -y install ntfs-3g
-dnf -y install libreoffice-writer libreoffice-calc libreoffice-impress
-echo "y" | cp $HERE/data/mimeapps.list /etc/xdg/mimeapps.list
 
 echo "Done. Please reboot and install Nvidia driver"
