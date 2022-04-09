@@ -28,7 +28,7 @@ dnf -y install freeipa-client
 ipa-client-install --enable-dns-update --mkhomedir
 ipa-client-automount --unattended
 # override kerberos renew setting
-cp $HERE/data/krb5.conf /etc/krb5.conf
+echo "y" | cp $HERE/data/krb5.conf /etc/krb5.conf
 echo "  $(hostname) = IN.KZMDSTU.COM" >> /etc/krb5.conf
 
 echo "Etc..."
