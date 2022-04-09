@@ -2,4 +2,4 @@
 
 Note that these scripts are tested only in [Rocky Linux](https://rockylinux.org).
 
-Run `system.sh` as root, `user.sh` as a user.
+Run `system.sh` as root.
