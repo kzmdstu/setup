@@ -40,4 +40,8 @@ ipa-client-automount --unattended
 echo "y" | cp $HERE/data/krb5.conf /etc/krb5.conf
 echo "  $(hostname) = IN.KZMDSTU.COM" >> /etc/krb5.conf
 
+# prepare cifs mount to install program as root
+mkdir -p /root/drnss
+echo "y" | cp $HERE/data/mount-installer.sh /root/
+
 echo "Done. Please reboot and install Nvidia driver"
