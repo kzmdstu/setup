@@ -30,6 +30,8 @@ dnf -y install libreoffice-writer libreoffice-calc libreoffice-impress
 echo "System Configuration"
 echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-initial-setup-first-login.desktop
 echo "y" | cp $HERE/data/mimeapps.list /etc/xdg/mimeapps.list
+dnf -y install ffmpegthumbnailer
+echo "y" | cp /usr/share/thumbnailers/ffmpegthumbnailer.thumbnailer /usr/share/thumbnailers/totem.thumbnailer
 
 echo "Setting up IPA Client"
 # TODO: find non-interactive way to install; maybe using --random password generated
