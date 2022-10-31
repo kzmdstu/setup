@@ -32,6 +32,8 @@ echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-initial-setup
 echo "y" | cp $HERE/data/mimeapps.list /etc/xdg/mimeapps.list
 dnf -y install ffmpegthumbnailer
 echo "y" | cp /usr/share/thumbnailers/ffmpegthumbnailer.thumbnailer /usr/share/thumbnailers/totem.thumbnailer
+cp $HERE/data/application-x-nuke.xml /usr/share/mime/packages/
+update-mime-database /usr/share/mime
 
 echo "Setting up IPA Client"
 # TODO: find non-interactive way to install; maybe using --random password generated
