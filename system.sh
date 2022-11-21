@@ -34,6 +34,7 @@ dnf -y install ffmpegthumbnailer
 echo "y" | cp /usr/share/thumbnailers/ffmpegthumbnailer.thumbnailer /usr/share/thumbnailers/totem.thumbnailer
 cp $HERE/data/application-x-nuke.xml /usr/share/mime/packages/
 update-mime-database /usr/share/mime
+update-desktop-database /usr/local/share/applications
 
 echo "Setting up IPA Client"
 # TODO: find non-interactive way to install; maybe using --random password generated
