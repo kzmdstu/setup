@@ -11,7 +11,7 @@ go install github.com/kzmdstu/seqinfo@latest
 go install github.com/kzmdstu/movinfo@latest
 
 echo 'export PATH=$PATH:"$HOME/go/bin"' >> "$HOME/.zshrc"
-echo 'export SEQINFO_CONFIG=/Volumes/storm/library/site/config/seqinfo/config.toml'
+echo 'export SEQINFO_CONFIG=/Volumes/storm/library/site/config/seqinfo/config.toml' >> "$HOME/.zshrc"
 source "$HOME/.zshrc"
 
 brew install openimageio
