@@ -27,6 +27,11 @@ dnf -y install ntfs-3g
 dnf -y install exfat-utils fuse-exfat
 dnf -y install libreoffice-writer libreoffice-calc libreoffice-impress
 
+echo "Installing USBGuard"
+dnf -y install usbguard
+install -m 0600 -o root -g root $HERE/data/rules.conf /etc/usbguard/rules.conf
+systemctl enable --now usbguard
+
 echo "System Configuration"
 echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-initial-setup-first-login.desktop
 echo "y" | cp $HERE/data/mimeapps.list /etc/xdg/mimeapps.list
