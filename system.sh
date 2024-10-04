@@ -23,6 +23,7 @@ echo "Installing GIMP"
 flatpak install --noninteractive flathub org.gimp.GIMP
 
 echo "Installing Useful Drivers/Programs"
+dnf -y install filezilla
 dnf -y install ntfs-3g
 dnf -y install exfat-utils fuse-exfat
 dnf -y install libreoffice-writer libreoffice-calc libreoffice-impress
