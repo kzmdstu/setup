@@ -27,6 +27,7 @@ dnf -y install filezilla
 dnf -y install ntfs-3g
 dnf -y install fuse-exfat
 dnf -y install libreoffice-writer libreoffice-calc libreoffice-impress
+dnf -y install gnome-tweaks
 
 echo "Installing USBGuard"
 dnf -y install usbguard
