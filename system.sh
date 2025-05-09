@@ -5,6 +5,7 @@ set -e
 
 HERE=$(dirname $BASH_SOURCE)
 
+echo "Change Mirror"
 sh $HERE/kaist-repos.sh
 
 echo "Updating The Distro"
