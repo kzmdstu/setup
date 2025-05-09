@@ -5,6 +5,8 @@ set -e
 
 HERE=$(dirname $BASH_SOURCE)
 
+sh $HERE/kaist-repos.sh
+
 echo "Updating The Distro"
 dnf -y update
 dnf -y install epel-release
