@@ -14,5 +14,5 @@ for repo in $repos; do
 	dnf config-manager --add-repo https://ftp.kaist.ac.kr/rocky-linux/8/$repo/x86_64/os
 done
 
-wget https://ftp.kaist.ac.kr/rocky-linux/RPM-GPG-KEY-Rocky-8 -o $HERE/data/rocky8.gpg
+wget https://ftp.kaist.ac.kr/rocky-linux/RPM-GPG-KEY-Rocky-8 -O $HERE/data/rocky8.gpg
 rpm --import $HERE/data/rocky8.gpg
