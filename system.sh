@@ -21,9 +21,8 @@ echo "Installing Mpv"
 dnf -y install mpv
 printf "keep-open\nloop-playlist=inf" > /etc/mpv/mpv.conf
 
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 echo "Installing GIMP"
-flatpak install --noninteractive flathub org.gimp.GIMP
+dnf -y install gimp
 
 echo "Installing Useful Drivers/Programs"
 dnf -y install filezilla
